@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ASH scan output
+.ash/ash_output/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/

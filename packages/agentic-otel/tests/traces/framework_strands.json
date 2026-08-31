@@ -1,0 +1,1129 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "claims-agent-strands"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "strands.agent"
+          },
+          "spans": [
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "21df3ae210a8ff67",
+              "parentSpanId": "d6e318c892b82dd6",
+              "name": "chat",
+              "startTimeUnixNano": "1774317937175868000",
+              "endTimeUnixNano": "1774317945555103000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:37.175869+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.554909+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 749
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 749
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 83
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 83
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 832
+                  }
+                },
+                {
+                  "key": "gen_ai.server.time_to_first_token",
+                  "value": {
+                    "intValue": 7576
+                  }
+                },
+                {
+                  "key": "gen_ai.server.request.duration",
+                  "value": {
+                    "intValue": 8147
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317937175879000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945555070000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}], \"finish_reason\": \"tool_use\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "2f12f661eadfe8dd",
+              "parentSpanId": "d6e318c892b82dd6",
+              "name": "execute_tool lookup_formulary",
+              "startTimeUnixNano": "1774317945555677000",
+              "endTimeUnixNano": "1774317945556866000",
+              "kind": 0,
+              "status": {
+                "code": 1
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.555682+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "execute_tool"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.name",
+                  "value": {
+                    "stringValue": "lookup_formulary"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.call.id",
+                  "value": {
+                    "stringValue": "tooluse_LCo5ejOCl3jZRXW2sHDTrR"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.description",
+                  "value": {
+                    "stringValue": "Look up a drug in the formulary database."
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.json_schema",
+                  "value": {
+                    "stringValue": "{\"properties\": {\"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"drug_name\"], \"type\": \"object\"}"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.556842+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.status",
+                  "value": {
+                    "stringValue": "success"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945555739000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945556830000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "3ac9d43461f9e781",
+              "parentSpanId": "4ef8f9ec22a69474",
+              "name": "chat",
+              "startTimeUnixNano": "1774317945557266000",
+              "endTimeUnixNano": "1774317946811092000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.557267+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.810979+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 909
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 909
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 80
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 80
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 989
+                  }
+                },
+                {
+                  "key": "gen_ai.server.time_to_first_token",
+                  "value": {
+                    "intValue": 801
+                  }
+                },
+                {
+                  "key": "gen_ai.server.request.duration",
+                  "value": {
+                    "intValue": 1180
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945557311000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946811071000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}], \"finish_reason\": \"tool_use\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "64a4530a7dc7233b",
+              "parentSpanId": "4ef8f9ec22a69474",
+              "name": "execute_tool check_coverage",
+              "startTimeUnixNano": "1774317946811283000",
+              "endTimeUnixNano": "1774317946811913000",
+              "kind": 0,
+              "status": {
+                "code": 1
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.811286+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "execute_tool"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.name",
+                  "value": {
+                    "stringValue": "check_coverage"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.call.id",
+                  "value": {
+                    "stringValue": "tooluse_BhCpohW5qChpKLoKHagqNv"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.description",
+                  "value": {
+                    "stringValue": "Check member coverage for a specific drug."
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.json_schema",
+                  "value": {
+                    "stringValue": "{\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\"], \"type\": \"object\"}"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.811892+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.status",
+                  "value": {
+                    "stringValue": "success"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946811328000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946811885000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "fb056295985a83d5",
+              "parentSpanId": "fad3d5549dc8dae5",
+              "name": "chat",
+              "startTimeUnixNano": "1774317946812313000",
+              "endTimeUnixNano": "1774317949430224000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.812314+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.430108+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 1071
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 1071
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 181
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 181
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 1252
+                  }
+                },
+                {
+                  "key": "gen_ai.server.time_to_first_token",
+                  "value": {
+                    "intValue": 875
+                  }
+                },
+                {
+                  "key": "gen_ai.server.request.duration",
+                  "value": {
+                    "intValue": 2491
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946812378000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949430208000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"render_decision\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\"}}], \"finish_reason\": \"tool_use\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "1086c3ea3e4e8c08",
+              "parentSpanId": "fad3d5549dc8dae5",
+              "name": "execute_tool render_decision",
+              "startTimeUnixNano": "1774317949430407000",
+              "endTimeUnixNano": "1774317949430889000",
+              "kind": 0,
+              "status": {
+                "code": 1
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.430409+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "execute_tool"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.name",
+                  "value": {
+                    "stringValue": "render_decision"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.call.id",
+                  "value": {
+                    "stringValue": "tooluse_TiQC5ipCLR6TSce1JTd1oQ"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.description",
+                  "value": {
+                    "stringValue": "Render the final claims decision."
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.json_schema",
+                  "value": {
+                    "stringValue": "{\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}, \"decision\": {\"description\": \"Parameter decision\", \"type\": \"string\"}, \"reasoning\": {\"description\": \"Parameter reasoning\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\", \"decision\", \"reasoning\"], \"type\": \"object\"}"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.430872+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.status",
+                  "value": {
+                    "stringValue": "success"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949430441000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"render_decision\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\"}}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949430868000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"response\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "80f8bd8977b8bd7c",
+              "parentSpanId": "9cb7598fc3839628",
+              "name": "chat",
+              "startTimeUnixNano": "1774317949431231000",
+              "endTimeUnixNano": "1774317954958018000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.431232+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:54.957916+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 1365
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 1365
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 120
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 120
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 1485
+                  }
+                },
+                {
+                  "key": "gen_ai.server.time_to_first_token",
+                  "value": {
+                    "intValue": 3915
+                  }
+                },
+                {
+                  "key": "gen_ai.server.request.duration",
+                  "value": {
+                    "intValue": 5448
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949431342000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"render_decision\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"response\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317954958002000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The pharmacy claim has been processed and **APPROVED**. \\n\\n**Summary:**\\n- **Member:** MEM-001\\n- **Drug:** Lisinopril\\n- **Decision:** APPROVED\\n- **Copay:** $10.00\\n\\nThe approval is based on Section 4.2.1 of the formulary policy, which covers lisinopril as a Tier 1 ACE Inhibitor with no prior authorization requirements. The member has active PPO coverage with their deductible already met and no applicable restrictions.\"}], \"finish_reason\": \"end_turn\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "9cb7598fc3839628",
+              "parentSpanId": "d077a5758cb1ad2c",
+              "name": "execute_event_loop_cycle",
+              "startTimeUnixNano": "1774317949431101000",
+              "endTimeUnixNano": "1774317954958107000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.431103+00:00"
+                  }
+                },
+                {
+                  "key": "event_loop.cycle_id",
+                  "value": {
+                    "stringValue": "4b377558-a110-479b-a5af-09d05019b2fa"
+                  }
+                },
+                {
+                  "key": "event_loop.parent_cycle_id",
+                  "value": {
+                    "stringValue": "7f403260-22ad-4b66-9ce0-0694650e44bd"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:54.958079+00:00"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949431190000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"render_decision\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"response\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "fad3d5549dc8dae5",
+              "parentSpanId": "d077a5758cb1ad2c",
+              "name": "execute_event_loop_cycle",
+              "startTimeUnixNano": "1774317946812185000",
+              "endTimeUnixNano": "1774317954958121000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.812188+00:00"
+                  }
+                },
+                {
+                  "key": "event_loop.cycle_id",
+                  "value": {
+                    "stringValue": "7f403260-22ad-4b66-9ce0-0694650e44bd"
+                  }
+                },
+                {
+                  "key": "event_loop.parent_cycle_id",
+                  "value": {
+                    "stringValue": "0225db64-7006-419e-ad7b-a63a8b3a8ead"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:49.430961+00:00"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946812262000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"name\": \"check_coverage\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"arguments\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317949431013000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_TiQC5ipCLR6TSce1JTd1oQ\", \"response\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Claim approved based on formulary lookup showing lisinopril is covered under Section 4.2.1 as a Tier 1 ACE Inhibitor with no prior authorization required. Member coverage verification confirms active PPO plan with deductible met and $10 copay applies. No coverage restrictions identified.\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "4ef8f9ec22a69474",
+              "parentSpanId": "d077a5758cb1ad2c",
+              "name": "execute_event_loop_cycle",
+              "startTimeUnixNano": "1774317945557159000",
+              "endTimeUnixNano": "1774317954958134000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.557161+00:00"
+                  }
+                },
+                {
+                  "key": "event_loop.cycle_id",
+                  "value": {
+                    "stringValue": "0225db64-7006-419e-ad7b-a63a8b3a8ead"
+                  }
+                },
+                {
+                  "key": "event_loop.parent_cycle_id",
+                  "value": {
+                    "stringValue": "7a5dfa20-6c7c-4109-9cac-24a12e3641ac"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:46.812007+00:00"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945557216000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"I'll process the pharmacy claim for member MEM-001 and lisinopril following the required steps.\"}, {\"type\": \"tool_call\", \"name\": \"lookup_formulary\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"arguments\": {\"drug_name\": \"lisinopril\"}}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317946812071000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_BhCpohW5qChpKLoKHagqNv\", \"response\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "d6e318c892b82dd6",
+              "parentSpanId": "d077a5758cb1ad2c",
+              "name": "execute_event_loop_cycle",
+              "startTimeUnixNano": "1774317937175829000",
+              "endTimeUnixNano": "1774317954958144000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:37.175831+00:00"
+                  }
+                },
+                {
+                  "key": "event_loop.cycle_id",
+                  "value": {
+                    "stringValue": "7a5dfa20-6c7c-4109-9cac-24a12e3641ac"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:45.556986+00:00"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317937175843000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317945557043000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"tooluse_LCo5ejOCl3jZRXW2sHDTrR\", \"response\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "347b0b0921cb6e59ef7ab83b9ec33ade",
+              "spanId": "d077a5758cb1ad2c",
+              "parentSpanId": "",
+              "name": "invoke_agent Strands Agents",
+              "startTimeUnixNano": "1774317937175285000",
+              "endTimeUnixNano": "1774317954958293000",
+              "kind": 0,
+              "status": {
+                "code": 1
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:37.175290+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "invoke_agent"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.agent.name",
+                  "value": {
+                    "stringValue": "Strands Agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.agent.tools",
+                  "value": {
+                    "stringValue": "[\"lookup_formulary\", \"check_coverage\", \"render_decision\"]"
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.definitions",
+                  "value": {
+                    "stringValue": "[{\"name\": \"lookup_formulary\", \"description\": \"Look up a drug in the formulary database.\", \"inputSchema\": {\"json\": {\"properties\": {\"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"drug_name\"], \"type\": \"object\"}}, \"outputSchema\": null}, {\"name\": \"check_coverage\", \"description\": \"Check member coverage for a specific drug.\", \"inputSchema\": {\"json\": {\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\"], \"type\": \"object\"}}, \"outputSchema\": null}, {\"name\": \"render_decision\", \"description\": \"Render the final claims decision.\", \"inputSchema\": {\"json\": {\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}, \"decision\": {\"description\": \"Parameter decision\", \"type\": \"string\"}, \"reasoning\": {\"description\": \"Parameter reasoning\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\", \"decision\", \"reasoning\"], \"type\": \"object\"}}, \"outputSchema\": null}]"
+                  }
+                },
+                {
+                  "key": "system_prompt",
+                  "value": {
+                    "stringValue": "You are a claims processing agent for a health insurance company.\n\nFor each pharmacy claim, you MUST follow this exact process:\n1. Look up the drug in the formulary database using the lookup_formulary tool\n2. Check the member's coverage using the check_coverage tool\n3. Based on the formulary and coverage results, render your decision using the render_decision tool\n\nRules:\n- Always cite the policy section from the formulary lookup in your decision\n- Never approve a claim based on your general knowledge alone \u2014 always use the tools\n"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T02:05:54.958279+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 4094
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 464
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 4094
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 464
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 4558
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.cache_read_input_tokens",
+                  "value": {
+                    "intValue": 0
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.cache_write_input_tokens",
+                  "value": {
+                    "intValue": 0
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317937175725000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril\"}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774317954958270000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The pharmacy claim has been processed and **APPROVED**. \\n\\n**Summary:**\\n- **Member:** MEM-001\\n- **Drug:** Lisinopril\\n- **Decision:** APPROVED\\n- **Copay:** $10.00\\n\\nThe approval is based on Section 4.2.1 of the formulary policy, which covers lisinopril as a Tier 1 ACE Inhibitor with no prior authorization requirements. The member has active PPO coverage with their deductible already met and no applicable restrictions.\\n\"}], \"finish_reason\": \"end_turn\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "claims-processing-agent"
+            }
+          },
+          {
+            "key": "service.version",
+            "value": {
+              "stringValue": "1.0.0"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "strands.agent",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "traceId": "db5e4e897dd2dd146f362c319565169e",
+              "spanId": "5ad426be5791090b",
+              "parentSpanId": "cf47df9695c542f9",
+              "name": "chat",
+              "startTimeUnixNano": "1774316027234157000",
+              "endTimeUnixNano": "1774316028374368000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:47.234159+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:48.374311+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 38
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 38
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 27
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 27
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 65
+                  }
+                },
+                {
+                  "key": "gen_ai.server.time_to_first_token",
+                  "value": {
+                    "intValue": 685
+                  }
+                },
+                {
+                  "key": "gen_ai.server.request.duration",
+                  "value": {
+                    "intValue": 1063
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774316027234184000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Is lisinopril typically covered by health insurance? Just answer directly.\"}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774316028374358000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Yes, lisinopril is typically covered by health insurance plans as it's a generic medication on most formularies.\"}], \"finish_reason\": \"end_turn\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "db5e4e897dd2dd146f362c319565169e",
+              "spanId": "cf47df9695c542f9",
+              "parentSpanId": "3e63c78da0b0aac8",
+              "name": "execute_event_loop_cycle",
+              "startTimeUnixNano": "1774316027234076000",
+              "endTimeUnixNano": "1774316028374411000",
+              "kind": 0,
+              "status": {
+                "code": 0
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:47.234078+00:00"
+                  }
+                },
+                {
+                  "key": "event_loop.cycle_id",
+                  "value": {
+                    "stringValue": "cf234610-ce9d-4005-8260-79c9c33f2596"
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:48.374398+00:00"
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774316027234110000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Is lisinopril typically covered by health insurance? Just answer directly.\"}]}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "traceId": "db5e4e897dd2dd146f362c319565169e",
+              "spanId": "3e63c78da0b0aac8",
+              "parentSpanId": "",
+              "name": "invoke_agent Strands Agents",
+              "startTimeUnixNano": "1774316027233898000",
+              "endTimeUnixNano": "1774316028374458000",
+              "kind": 0,
+              "status": {
+                "code": 1
+              },
+              "attributes": [
+                {
+                  "key": "gen_ai.event.start_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:47.233902+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "invoke_agent"
+                  }
+                },
+                {
+                  "key": "gen_ai.provider.name",
+                  "value": {
+                    "stringValue": "strands-agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.agent.name",
+                  "value": {
+                    "stringValue": "Strands Agents"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "us.anthropic.claude-sonnet-4-20250514-v1:0"
+                  }
+                },
+                {
+                  "key": "system_prompt",
+                  "value": {
+                    "stringValue": "You are a helpful health insurance assistant. Answer questions directly and concisely."
+                  }
+                },
+                {
+                  "key": "gen_ai.event.end_time",
+                  "value": {
+                    "stringValue": "2026-03-24T01:33:48.374449+00:00"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.prompt_tokens",
+                  "value": {
+                    "intValue": 38
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.completion_tokens",
+                  "value": {
+                    "intValue": 27
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": 38
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.output_tokens",
+                  "value": {
+                    "intValue": 27
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.total_tokens",
+                  "value": {
+                    "intValue": 65
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.cache_read_input_tokens",
+                  "value": {
+                    "intValue": 0
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.cache_write_input_tokens",
+                  "value": {
+                    "intValue": 0
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774316027233954000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.input.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Is lisinopril typically covered by health insurance? Just answer directly.\"}]}]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "gen_ai.client.inference.operation.details",
+                  "timeUnixNano": "1774316028374444000",
+                  "attributes": [
+                    {
+                      "key": "gen_ai.output.messages",
+                      "value": {
+                        "stringValue": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Yes, lisinopril is typically covered by health insurance plans as it's a generic medication on most formularies.\\n\"}], \"finish_reason\": \"end_turn\"}]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

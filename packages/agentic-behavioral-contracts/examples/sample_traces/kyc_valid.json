@@ -1,0 +1,143 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {"key": "service.name", "value": {"stringValue": "kyc-aml-screening-agent"}},
+          {"key": "service.version", "value": {"stringValue": "1.0.0"}}
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "strands.agent",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-root-001",
+              "parentSpanId": "",
+              "name": "invoke_agent kyc-screener",
+              "startTimeUnixNano": "1711100000000000000",
+              "endTimeUnixNano": "1711100006000000000",
+              "kind": 1,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "invoke_agent"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.input.messages", "value": {"stringValue": "[{\"role\": \"user\", \"content\": \"Run KYC screening for customer CUST-001 in US jurisdiction\"}]"}},
+                {"key": "gen_ai.output.messages", "value": {"stringValue": "[{\"role\": \"assistant\", \"content\": \"KYC screening complete for CUST-001. CLEARED. The customer passed all sanctions checks (OFAC-SDN, EU-Consolidated, UN-Security-Council) with no matches. US jurisdiction rules under 31 CFR 1010.230 (BSA/AML) apply. Risk score: 25 (low). No enhanced due diligence required. Standard monitoring applies per FinCEN-CDD requirements.\"}]"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-model-001",
+              "parentSpanId": "span-root-001",
+              "name": "chat",
+              "startTimeUnixNano": "1711100000100000000",
+              "endTimeUnixNano": "1711100001000000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "chat"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.usage.input_tokens", "value": {"intValue": 520}},
+                {"key": "gen_ai.usage.output_tokens", "value": {"intValue": 140}},
+                {"key": "gen_ai.response.finish_reasons", "value": {"stringValue": "[\"tool_calls\"]"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-tool-001",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool screen_sanctions",
+              "startTimeUnixNano": "1711100001100000000",
+              "endTimeUnixNano": "1711100001800000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "screen_sanctions"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-001"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"customer_id\": \"CUST-001\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"match\": false, \"lists_checked\": [\"OFAC-SDN\", \"EU-Consolidated\", \"UN-Security-Council\"], \"checked_at\": \"2026-03-23T10:00:00Z\", \"customer_id\": \"CUST-001\", \"source\": \"sanctions-db\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-tool-002",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool verify_jurisdiction",
+              "startTimeUnixNano": "1711100001900000000",
+              "endTimeUnixNano": "1711100002400000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "verify_jurisdiction"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-002"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"customer_id\": \"CUST-001\", \"jurisdiction\": \"US\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"applicable_regulations\": [\"BSA/AML\", \"OFAC\", \"FinCEN-CDD\"], \"risk_factors\": [\"PEP-status\", \"high-risk-country\", \"transaction-volume\"], \"reporting_threshold_usd\": 10000, \"enhanced_due_diligence_required\": false, \"regulation_ref\": \"31 CFR 1010.230\", \"customer_id\": \"CUST-001\", \"jurisdiction\": \"US\", \"source\": \"jurisdiction-rules\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-tool-003",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool assess_risk",
+              "startTimeUnixNano": "1711100002500000000",
+              "endTimeUnixNano": "1711100003000000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "assess_risk"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-003"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"customer_id\": \"CUST-001\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"score\": 25, \"level\": \"low\", \"factors\": [\"standard-jurisdiction\", \"no-pep\"], \"customer_id\": \"CUST-001\", \"source\": \"risk-model\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-tool-004",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool render_determination",
+              "startTimeUnixNano": "1711100003100000000",
+              "endTimeUnixNano": "1711100003500000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "render_determination"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-004"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"customer_id\": \"CUST-001\", \"determination\": \"cleared\", \"reasoning\": \"No sanctions matches, low risk score, standard US jurisdiction requirements met\", \"citations\": [\"31 CFR 1010.230\"]}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"determination\": \"cleared\", \"customer_id\": \"CUST-001\", \"reasoning\": \"No sanctions matches, low risk score, standard US jurisdiction requirements met\", \"citations\": [\"31 CFR 1010.230\"], \"source\": \"determination-engine\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-kyc-valid-001",
+              "spanId": "span-model-002",
+              "parentSpanId": "span-root-001",
+              "name": "chat",
+              "startTimeUnixNano": "1711100003600000000",
+              "endTimeUnixNano": "1711100005500000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "chat"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.usage.input_tokens", "value": {"intValue": 950}},
+                {"key": "gen_ai.usage.output_tokens", "value": {"intValue": 110}},
+                {"key": "gen_ai.response.finish_reasons", "value": {"stringValue": "[\"stop\"]"}}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

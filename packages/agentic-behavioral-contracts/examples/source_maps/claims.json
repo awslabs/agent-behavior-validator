@@ -1,0 +1,10 @@
+{
+  "lookup_formulary": {
+    "source_name": "formulary-db",
+    "source_type": "database"
+  },
+  "check_coverage": {
+    "source_name": "coverage-policy",
+    "source_type": "api"
+  }
+}

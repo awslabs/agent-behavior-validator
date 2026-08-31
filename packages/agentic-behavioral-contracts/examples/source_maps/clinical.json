@@ -1,0 +1,14 @@
+{
+  "check_drug_interactions": {
+    "source_name": "drug-interaction-db",
+    "source_type": "database"
+  },
+  "lookup_clinical_guidelines": {
+    "source_name": "clinical-guidelines",
+    "source_type": "database"
+  },
+  "check_dosing_range": {
+    "source_name": "dosing-reference",
+    "source_type": "database"
+  }
+}

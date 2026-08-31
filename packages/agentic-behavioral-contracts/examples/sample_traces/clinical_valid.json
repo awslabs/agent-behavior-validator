@@ -1,0 +1,143 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {"key": "service.name", "value": {"stringValue": "clinical-decision-support-agent"}},
+          {"key": "service.version", "value": {"stringValue": "1.0.0"}}
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "strands.agent",
+            "version": "0.1.0"
+          },
+          "spans": [
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-root-001",
+              "parentSpanId": "",
+              "name": "invoke_agent clinical-advisor",
+              "startTimeUnixNano": "1711300000000000000",
+              "endTimeUnixNano": "1711300007000000000",
+              "kind": 1,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "invoke_agent"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.input.messages", "value": {"stringValue": "[{\"role\": \"user\", \"content\": \"Patient with type 2 diabetes currently on metformin 1000mg BID. Newly diagnosed hypertension. Recommend add-on therapy.\"}]"}},
+                {"key": "gen_ai.output.messages", "value": {"stringValue": "[{\"role\": \"assistant\", \"content\": \"Based on clinical guidelines, I recommend adding lisinopril 10mg once daily for hypertension management. Per Section 7.2 of the AHA/ACC 2024 Guideline, ACE inhibitors are first-line therapy for hypertension and provide additional renal protection in diabetic patients. Drug interaction check confirms no clinically significant interaction between metformin and lisinopril (DrugBank DB00331-DB00722). Target BP: < 130/80 mmHg per AHA/ACC 2024. Recommend follow-up BP check in 4-6 weeks.\"}]"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-model-001",
+              "parentSpanId": "span-root-001",
+              "name": "chat",
+              "startTimeUnixNano": "1711300000100000000",
+              "endTimeUnixNano": "1711300001000000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "chat"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.usage.input_tokens", "value": {"intValue": 580}},
+                {"key": "gen_ai.usage.output_tokens", "value": {"intValue": 160}},
+                {"key": "gen_ai.response.finish_reasons", "value": {"stringValue": "[\"tool_calls\"]"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-tool-001",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool check_drug_interactions",
+              "startTimeUnixNano": "1711300001100000000",
+              "endTimeUnixNano": "1711300001600000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "check_drug_interactions"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-001"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"drug_a\": \"metformin\", \"drug_b\": \"lisinopril\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"interaction_found\": false, \"interaction_severity\": \"none\", \"description\": \"No clinically significant interaction identified.\", \"recommendation\": \"Safe to co-administer. No dosage adjustment required.\", \"source_ref\": \"DrugBank DB00331-DB00722\", \"drug_a\": \"metformin\", \"drug_b\": \"lisinopril\", \"source\": \"drug-interaction-db\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-tool-002",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool lookup_clinical_guidelines",
+              "startTimeUnixNano": "1711300001700000000",
+              "endTimeUnixNano": "1711300002200000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "lookup_clinical_guidelines"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-002"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"condition\": \"hypertension\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"guideline\": \"AHA/ACC 2024 Guideline for the Management of Hypertension\", \"first_line\": [\"ACE inhibitors\", \"ARBs\", \"Calcium channel blockers\", \"Thiazide diuretics\"], \"target_bp\": \"< 130/80 mmHg for most adults\", \"monitoring\": \"Recheck BP in 4-6 weeks after initiation or dose change\", \"guideline_ref\": \"Section 7.2, AHA/ACC 2024\", \"condition\": \"hypertension\", \"source\": \"clinical-guidelines\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-tool-003",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool check_dosing_range",
+              "startTimeUnixNano": "1711300002300000000",
+              "endTimeUnixNano": "1711300002700000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "check_dosing_range"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-003"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"drug_name\": \"lisinopril\"}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"initial_dose\": \"10mg once daily\", \"max_dose\": \"40mg/day\", \"renal_adjustment\": \"CrCl < 30: start at 2.5mg/day\", \"source_ref\": \"DailyMed Lisinopril Label\", \"drug_name\": \"lisinopril\", \"source\": \"dosing-reference\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-tool-004",
+              "parentSpanId": "span-root-001",
+              "name": "execute_tool render_recommendation",
+              "startTimeUnixNano": "1711300002800000000",
+              "endTimeUnixNano": "1711300003200000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "execute_tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "render_recommendation"}},
+                {"key": "gen_ai.tool.call.id", "value": {"stringValue": "call-004"}},
+                {"key": "gen_ai.tool.call.arguments", "value": {"stringValue": "{\"patient_context\": \"T2DM on metformin, new hypertension diagnosis\", \"recommendation\": \"Add lisinopril 10mg QD\", \"reasoning\": \"ACE inhibitor first-line per AHA/ACC, renal protective in diabetes, no interaction with metformin\", \"citations\": [\"Section 7.2, AHA/ACC 2024\", \"DrugBank DB00331-DB00722\"]}"}},
+                {"key": "gen_ai.tool.call.result", "value": {"stringValue": "{\"recommendation\": \"Add lisinopril 10mg QD\", \"patient_context\": \"T2DM on metformin, new hypertension diagnosis\", \"reasoning\": \"ACE inhibitor first-line per AHA/ACC, renal protective in diabetes, no interaction with metformin\", \"citations\": [\"Section 7.2, AHA/ACC 2024\", \"DrugBank DB00331-DB00722\"], \"source\": \"recommendation-engine\"}"}}
+              ]
+            },
+            {
+              "traceId": "trace-clinical-valid-001",
+              "spanId": "span-model-002",
+              "parentSpanId": "span-root-001",
+              "name": "chat",
+              "startTimeUnixNano": "1711300003300000000",
+              "endTimeUnixNano": "1711300006500000000",
+              "kind": 3,
+              "status": {"code": 1},
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "chat"}},
+                {"key": "gen_ai.provider.name", "value": {"stringValue": "aws.bedrock"}},
+                {"key": "gen_ai.request.model", "value": {"stringValue": "us.anthropic.claude-sonnet-4-6-20250514-v1:0"}},
+                {"key": "gen_ai.usage.input_tokens", "value": {"intValue": 1100}},
+                {"key": "gen_ai.usage.output_tokens", "value": {"intValue": 130}},
+                {"key": "gen_ai.response.finish_reasons", "value": {"stringValue": "[\"stop\"]"}}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

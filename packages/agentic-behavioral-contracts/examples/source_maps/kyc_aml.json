@@ -1,0 +1,14 @@
+{
+  "screen_sanctions": {
+    "source_name": "sanctions-db",
+    "source_type": "database"
+  },
+  "verify_jurisdiction": {
+    "source_name": "jurisdiction-rules",
+    "source_type": "database"
+  },
+  "assess_risk": {
+    "source_name": "risk-model",
+    "source_type": "api"
+  }
+}
