@@ -1,0 +1,26 @@
+version: 2
+updates:
+  # Python dependencies, one entry per package in the monorepo
+  - package-ecosystem: pip
+    directory: /packages/agentic-behavioral-contracts
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+
+  - package-ecosystem: pip
+    directory: /packages/agentic-otel
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+
+  # GitHub Actions are pinned to commit SHAs for supply-chain integrity;
+  # Dependabot proposes SHA bumps with the version comment updated, so
+  # upgrades arrive as reviewed PRs that CI validates.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies, github-actions]
