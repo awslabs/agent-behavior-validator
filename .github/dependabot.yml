@@ -1,10 +1,18 @@
 version: 2
+
+# Cooldown periods deliberately delay adoption of freshly published versions.
+# A compromised maintainer account can publish a malicious release; waiting
+# lets the ecosystem detect and yank it before we take the bump. Majors wait
+# longer because they carry the most behavioural change alongside the risk.
 updates:
   # Python dependencies, one entry per package in the monorepo
   - package-ecosystem: pip
     directory: /packages/agentic-behavioral-contracts
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
     open-pull-requests-limit: 5
     labels: [dependencies]
 
@@ -12,6 +20,9 @@ updates:
     directory: /packages/agentic-otel
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
     open-pull-requests-limit: 5
     labels: [dependencies]
 
@@ -22,5 +33,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
     open-pull-requests-limit: 5
     labels: [dependencies, github-actions]
